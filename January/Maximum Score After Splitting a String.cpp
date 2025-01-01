@@ -1,4 +1,4 @@
-I-Approach
+I-Approach (Two Pass)
 
 class Solution {
 public:
@@ -27,7 +27,10 @@ public:
     }
 };
 
-II-Approach
+Time Complexity = O(n)
+Space Complexity = O(1)
+
+II-Approach (One Pass)
 
 class Solution {
 public:
@@ -53,3 +56,6 @@ public:
         return score+oCount;
     }
 };
+
+Time Complexity = O(n)
+Space Complexity = O(1)
