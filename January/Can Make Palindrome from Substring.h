@@ -40,7 +40,7 @@ public:
 
 Time Complexity = O(n*m)
 Space Cmplexity = O(1)
-Where, n is the length of given string s ans m is the no. of queries of size of queries vector
+Where, 'n' is the length of given string 's' ans 'm' is the no. of queries of size of queries vector
 
 // This approach will give TTE(Time Limit Exceeded)
 
@@ -80,4 +80,4 @@ public:
 
 Time Complexity = O(26*n) = O(n)
 Space Cmplexity = O(26*n) = O(n)
-Where, n is the length of given string s
+Where, 'n' is the length of given string 's'
