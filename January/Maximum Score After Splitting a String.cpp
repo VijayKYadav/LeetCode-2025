@@ -29,6 +29,7 @@ public:
 
 Time Complexity = O(n)
 Space Complexity = O(1)
+Where, 'n' is the length of given string 's'
 
 II-Approach (One Pass)
 
@@ -59,3 +60,4 @@ public:
 
 Time Complexity = O(n)
 Space Complexity = O(1)
+Where,  'n' is the length of the given string 's'
