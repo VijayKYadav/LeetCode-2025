@@ -6,6 +6,8 @@ public:
         int n=s.length();
         if(n<k)
             return false;
+        if(n==k)
+            return true;
             
         vector<int> mp(26,0);
 
