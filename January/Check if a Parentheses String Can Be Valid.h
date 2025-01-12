@@ -123,3 +123,45 @@ Time Complexity: O(n)
 Space Complexity: O(1) 
 where, 'n' is the length of the given string 's'.
 
+III Approach
+
+class Solution {
+public:
+    bool canBeValid(string s, string locked) {
+        int n=s.length();
+        if(n%2==1)
+            return false;
+
+        int open=0;
+
+        for(int i=0;i<n;i++)
+        {
+            if(locked[i]=='0' || s[i]=='(')
+                open++;
+            else
+                open--;
+            
+            if(open<0)
+                return false;
+        }
+
+        int close=0;
+        for(int i=n-1;i>=0;i--)
+        {
+            if(locked[i]=='0' || s[i]==')')
+                close++;
+            else
+                close--;
+
+            if(close<0)
+                return false;
+        }
+        
+        return true;
+
+    }
+};
+
+Time Complexity: O(n)
+Space Complexity: O(1) 
+where, 'n' is the length of the given string 's'.
