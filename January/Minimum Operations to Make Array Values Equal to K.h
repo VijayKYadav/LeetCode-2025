@@ -1,4 +1,4 @@
-I Approach
+I Approach (Using Hash Map)
 
 class Solution {
 public:
@@ -34,4 +34,28 @@ public:
 
 Time Complexity: O(n)
 Space Complexity: O(101)~O(1) 
+where, 'n' is the size of the given vector 'nums'.
+
+II Approach (Using Unordered_set)
+
+class Solution {
+public:
+    int minOperations(vector<int>& nums, int k) {
+        int n=nums.size();
+        unordered_set<int> st;
+
+        for(int i=0;i<n;i++)
+        {
+            if(nums[i]>k)
+                st.insert(nums[i]);
+            else if(nums[i]<k)
+                return -1;
+        }
+
+        return st.size();
+    }
+};
+
+Time Complexity: O(n)
+Space Complexity: O(n)
 where, 'n' is the size of the given vector 'nums'.
