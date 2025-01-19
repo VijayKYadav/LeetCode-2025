@@ -77,7 +77,7 @@ public:
     }
 };
 
-Time Complexity: O(n*ml*og(n*m))
+Time Complexity: O(n*m*og(n*m))
 Space Complexity: O(n*m)
  
 where, 'n' is the number of row's and 
