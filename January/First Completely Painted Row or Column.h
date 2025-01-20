@@ -43,5 +43,4 @@ public:
 Time Complexity: O(n*m)
 Space Complexity: O(n*m)
  
-where, 'n' and 'm' are the number of row's and 
-column's in the given 2-D array 'mat'.
+where, 'n' and 'm' are the number of row's and column's in the given 2-D array 'mat'.
