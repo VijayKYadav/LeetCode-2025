@@ -49,7 +49,7 @@ Space Complexity: O(n*m)
 where, 'n' is the number of row's and 
 'm' is the number of column's in the given square matrix 'grid'.
 
-II Approach
+II Approach (Optimal Approach)
 
 class Solution {
 public:
