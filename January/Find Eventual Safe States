@@ -1,0 +1,49 @@
+I Approach (Using DFS)
+
+class Solution {
+public:
+    vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
+        int n=graph.size();
+        vector<int> v(n,0);
+        vector<int> path(n,0);
+        vector<int>  cycle(n,0);
+
+        for(int i=0;i<n;i++)
+        {
+            if(!v[i])
+                DFS(i,graph,v,path,cycle);
+        }
+        vector<int> ans;
+        for(int i=0;i<n;i++)
+        {
+            if(cycle[i])
+                ans.push_back(i);
+        }
+        return ans;
+    }
+    bool DFS(int node,vector<vector<int>> &graph,vector<int> &v,vector<int> &path,vector<int> &cycle)
+    {
+        v[node]=1;
+        path[node]=1;
+
+        for(int i=0;i<graph[node].size();i++)
+        {
+            if(!v[graph[node][i]])
+            {
+                if(DFS(graph[node][i],graph,v,path,cycle))
+                    return true;
+            }
+            else if(path[graph[node][i]])
+                return true;
+        }
+        cycle[node]=1;
+        path[node]=0;
+        return false;
+    }
+};
+
+Time Complexity: O(n+m)
+Space Complexity: O(n)
+ 
+where, 'n' is the number of vertice's and 
+'m' is the number of edge's in a given graph 'graph'.
