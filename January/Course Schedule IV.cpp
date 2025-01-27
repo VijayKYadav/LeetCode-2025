@@ -1,56 +1,55 @@
-I Approach
+I Approach (Using DFS)
 
 class Solution {
 public:
     vector<bool> checkIfPrerequisite(int numCourses, vector<vector<int>>& prerequisites, vector<vector<int>>& queries) {
-            unordered_map<int, vector<int>> adj;
+        int n=numCourses;
+		int e=prerequisites.size();
+        vector<int> adj[numCourses];
 
-            for(auto &edge : prerequisites) 
-            {
-                int u = edge[0];
-                int v = edge[1];
+        for(int i=0;i<e;i++)
+        {
+            int u=prerequisites[i][0];
+            int v=prerequisites[i][1];
 
-                adj[u].push_back(v); //u --> v
-            }
+            adj[u].push_back(v);
+        }
 
-            int Q = queries.size();
-            vector<bool> result(Q);
+        int Q=queries.size();
+        vector<bool> ans(Q);
 
-            for(int i = 0; i < Q; i++) 
-            {
-                int u = queries[i][0]; //source.
-                int v = queries[i][1]; //Dest.
+        for(int i=0;i<Q;i++)
+        {
+            int src=queries[i][0];
+            int des=queries[i][1];
 
-                vector<bool> visited(numCourses, false);
-                result[i] = dfs(adj, u, v, visited); //You can use BFS as well
-            }
+            vector<bool> vi(numCourses);
 
-            return result;
+            ans[i]=solve(adj,src,des,vi);
+        }
+
+        return ans;
     }
 
-    bool dfs(unordered_map<int, vector<int>>& adj, int src, int dest, vector<bool>& visited)
+    bool solve(vector<int> adj[], int src, int des, vector<bool> &vi)
     {
-        visited[src] = true;
+        vi[src]=true;
 
-        if(src == dest) 
+        if(src==des)
+            return true;
+        
+        for(int i=0;i<adj[src].size();i++)
         {
-            return true;// yes we can reach to dest
+            if(!vi[adj[src][i]] && solve(adj,adj[src][i],des,vi))
+                return true;
         }
 
-        bool isReacheable = false;
-        for(auto &adjNode : adj[src]) 
-        {
-            if(!visited[adjNode]) 
-            {
-                isReacheable = isReacheable || dfs(adj, adjNode, dest, visited);
-            }
-        }
-
-        return isReacheable;
+        return false;
     }
 };
 
-Time Complexity: O(Q * (V+E))
-Space Complexity: O(V+E)
- 
-where, 'V' is the size of the given array 'favorite'.
+Time Complexity: O(Q *(n+e))
+Space Complexity: O(n+e)
+    
+where, 'n' is the number of vertice's 'e' is the number of edges in the given graph 'prerequisites' and 
+'Q' is size of the given 2D-array 'queries'.
