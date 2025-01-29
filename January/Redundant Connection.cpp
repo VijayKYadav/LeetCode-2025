@@ -30,7 +30,7 @@ public:
         } while (node != start);
 
         vector<int> ans;
-        for (int i = edges.size() - 1; i >= 0; i--) {
+        for (int i = n - 1; i >= 0; i--) {
             if (cycle[edges[i][0] - 1] && cycle[edges[i][1] - 1]) {
                 ans=edges[i];
                 break;
