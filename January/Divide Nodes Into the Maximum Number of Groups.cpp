@@ -1,4 +1,4 @@
-I Approach (Using DFS)
+I Approach (Using DFS+BFS+Bipartite)
 
 class Solution {
 public:
