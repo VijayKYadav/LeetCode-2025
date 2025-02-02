@@ -26,5 +26,5 @@ public:
 Time Complexity=O(n)
 Space Complexity=O(1)
 
-Where, 'n'
+Where, 'n' is the size of the given array 'nums'.
 
