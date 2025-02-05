@@ -33,5 +33,5 @@ public:
 Time Complexity=O(n)
 Space Complexity=O(1)
 
-Where, 'n' is the length of the given string 's1'.
+Where, 'n' is the length of the given string 's1' or 's2'.
 
