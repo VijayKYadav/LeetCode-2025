@@ -9,7 +9,7 @@ public:
         if(n==1 || m==1)
             return mat;
         
-        unordered_map<int,multiset<int>> mp;
+        unordered_map<int,multiset<int>> mp; // Map Value is Multiset.
 
         for(int i=0;i<n;i++)
         {
@@ -50,7 +50,7 @@ public:
         if(n==1 || m==1)
             return mat;
         
-        unordered_map<int,priority_queue<int, vector<int>, greater<int>>> mp;
+        unordered_map<int,priority_queue<int, vector<int>, greater<int>>> mp; // Map Value is Priority_Queue(MinHeap).
 
         for(int i=0;i<n;i++)
         {
