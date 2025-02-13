@@ -1,4 +1,4 @@
-I Approach (Using Concept of Stack without Stack Data Structure ) (Optimal Approach)
+I Approach (Using MinHeap) (Optimal Approach)
 
 class Solution {
 public:
