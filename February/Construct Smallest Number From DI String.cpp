@@ -110,42 +110,42 @@ Space Complexity=O(n).
 Where,  'n' is the length of the given string 'pattern'.
 
 
-II Approach (Using Recursion and Backing Tracking and Frquency Count)
+II Approach (Using Stack) (Optimal Method)
 
 class Solution {
 public:
-    int numTilePossibilities(string tiles) {
-        int n=tiles.length();
+    string smallestNumber(string pattern) {
+        int n=pattern.length();
 
-        vector<int> mp(26,0);
-        
+        string ans="";
+        stack<char> st;
+        int count=1;
+
         for(int i=0;i<n;i++)
-            mp[tiles[i]-'A']++;
-
-        return solve(mp);
-    }
-
-    int solve(vector<int> &mp)
-    {
-        int count=0;
-
-        for(int i=0;i<26;i++)
         {
-            if(mp[i]!=0)
-            {
-                count++;
-
-                mp[i]--;
-                count+=solve(mp);
-                mp[i]++;
+            st.push(count+'0');
+            if(pattern[i]=='I')
+            {    
+                while(!st.empty())
+                {
+                    ans+=st.top();
+                    st.pop();
+                }
             }
+            count++;
+        }
+        st.push(count+'0');
+        while(!st.empty())
+        {
+            ans+=st.top();
+            st.pop();
         }
 
-        return count;
+        return ans;
     }
 };
 
-Time Complexity=O(2^n).
+Time Complexity=O(n).
 Space Complexity=O(n).
 
-Where,  'n' is the length of the given string 'tiles'.
+Where,  'n' is the length of the given string 'pattern'.
