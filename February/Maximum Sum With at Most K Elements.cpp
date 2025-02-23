@@ -31,7 +31,7 @@ public:
     }
 };
 
-Time Complexity=O(n*log(m)+n*m*log(m)+k*log(n*m).
+Time Complexity=O(n*log(m)+n*m*log(m)+k*log(n*m)).
 Space Complexity=O(n*m).
 
 Where, 'n' is the number of the row's and 
