@@ -25,7 +25,7 @@ public:
                 minS=0;
         }
 
-        return max(abs(maxSum),abs(minSum));
+        return max(maxSum,abs(minSum));
     }
 };
 
