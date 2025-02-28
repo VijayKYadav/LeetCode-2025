@@ -6,15 +6,8 @@ public:
         int n=str1.length();
         int m=str2.length();
         string sls="";
-        vector<vector<int>> dp(n+1,vector<int>(m+1));
-        for(int i=0;i<n+1;i++)
-        {
-            dp[i][0]=0;
-        }
-        for(int j=1;j<m+1;j++)
-        {
-            dp[0][j]=0;
-        }
+        vector<vector<int>> dp(n+1,vector<int>(m+1,0));
+        
         for(int i=1;i<n+1;i++)
         {
             for(int j=1;j<m+1;j++)
@@ -29,6 +22,7 @@ public:
                 }
             }
         }
+        
         int i=n,j=m;
 
         while(i>0 && j>0)
@@ -53,17 +47,21 @@ public:
                 }
             }
         }
+        
         while(i>0)
         {
             sls.push_back(str1[i-1]);
             i--;
         }
+        
         while(j>0)
         {
             sls.push_back(str2[j-1]);
             j--;
         }
+        
         reverse(sls.begin(),sls.end());
+        
         return sls;
     }
 };
