@@ -32,7 +32,7 @@ Space Complexity=O(n+m).
 Where, 'n' is the size of the given 2D-vector 'nums1' and
 'm' is the size of the given 2D-vector 'nums2'.
 
-II Approach (Using Two Pointer)
+II Approach (Using Two Pointer) (Since the given two 2D-vector num1 and num2 are sorted on the bases of ID)
 
 class Solution {
 public:
