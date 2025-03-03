@@ -6,12 +6,13 @@ public:
         int n=columnTitle.length();
 
         int ans=0;
-
+        long p=1;
+        
         for(int i=0;i<n;i++)
         {
             int c=columnTitle[n-1-i]-'A'+1;
-            int p=pow(26,i);
             ans+=p*c;
+            p*=26;
         }
 
         return ans;
