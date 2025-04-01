@@ -29,7 +29,7 @@ Where,'n' is the number of a row's in a given 2D-array 'questions'.
 This, solution will give TLE(Time Limit Exceeded).
 
 
-II Approach (Using Dynamice Programming)
+II Approach (Using Dynamice Programming) (Top-Down)
 
 class Solution {
 public:
@@ -52,6 +52,42 @@ public:
         long long notTake=solve(ind+1,n,questions,dp);
 
         return dp[ind]=max(take,notTake);
+    }
+};
+
+Time Complexity=O(n);
+Space Complexity=O(n)+O(n)~O(n);
+
+Where,'n' is the number of a row's in a given 2D-array 'questions'.
+
+III Approach (Using Dynamice Programming) (Bottom-Up) (Optimal Method)
+
+class Solution {
+public:
+    long long mostPoints(vector<vector<int>>& questions) {
+        int n=questions.size();
+
+        vector<long long> dp(n,-1);
+
+        int jumpInd=0;
+        long long take=0, notTake=0;
+
+        for(int i=n-1;i>=0;i--)
+        {
+            jumpInd=i+questions[i][1]+1;
+
+            take=questions[i][0];
+
+            if(jumpInd<n)
+                take+=dp[jumpInd];
+            
+            notTake=0;
+            if(i+1<n)
+                notTake=dp[i+1];
+            
+            dp[i]=max(take,notTake);
+        }
+        return dp[0];
     }
 };
 
