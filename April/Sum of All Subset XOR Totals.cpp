@@ -26,7 +26,7 @@ public:
 Time Complexity=O(2^n).
 Space Complexity=O(n).
 
-Where,'n' is the number of node's in a given tree 'root'.
+Where,'n' is the size of a given vector/array 'nums'.
 
 
 II Approach (Using Bit-Manipulation) (Optimal Method)
@@ -46,7 +46,7 @@ public:
     }
 };
 
-Time Complexity=O(2^n).
-Space Complexity=O(n).
+Time Complexity=O(n).
+Space Complexity=O(1).
 
-Where,'n' is the number of node's in a given tree 'root'.
+Where,'n' is the size of a given vector/array 'nums'.
